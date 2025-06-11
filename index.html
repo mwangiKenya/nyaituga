@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teacher Login - Nyaituga Secondary</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      width: 300px;
+    }
+
+    .box {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      display: none;
+    }
+
+    .box.active {
+      display: block;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    input[type="number"], input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+    .pro-linkOne {
+  display: inline-block;
+  background-color: #1a73e8; /* Google Blue - modern & clean */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 5px;
+}
+
+.pro-linkOne:hover {
+  background-color: #1666c1; /* Darker on hover */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Login Box -->
+    <div id="loginBox" class="box active">
+      <h2>Teacher Login</h2>
+      <form id="loginForm">
+        <input type="number" name="email" placeholder="TSC Number" required />
+        <input type="password" name="password" placeholder="Password" required />
+        <button type="submit">Login</button>
+      </form>
+    </div>
+
+    <!-- Dashboard Box -->
+    <div id="dashboardBox" class="box">
+      <h2>Welcome, Teacher!</h2>
+      <p>You are now logged in.</p>
+      <p> Kindly select the task that you wish to perform </p>
+      <a href="signIn.html" class="pro-linkOne"> Sign In </a>
+      <a href="signIn.html" class="pro-linkOne"> Sign out </a>
+      <a href="studentsResults.html" class="pro-linkOne"> Upload student results </a>
+      <a href="sendAnnouncement.html"class="pro-linkOne"> Send announcement </a>
+      <a href="timetable.html" class="pro-linkOne"> View timetable </a>
+      <a href="contactadmin.html" class="pro-linkOne"> Contact the administration </a>
+      <h5> &copy; Nyaituga@2025 </h5>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+      e.preventDefault(); // Prevent actual form submission
+
+      // Hide login box and show dashboard
+      document.getElementById("loginBox").classList.remove("active");
+      document.getElementById("dashboardBox").classList.add("active");
+    });
+  </script>
+
+</body>
+</html>
